@@ -1,0 +1,22 @@
+Trabajamos en entender una API
+datos.gob.ar portal de datos abiertos de presupuesto.
+
+www.datos.gob.ar o https://www.presupuestoabierto.gob.ar/api/
+
+La API (Application Programming Interface) de Presupuesto Abierto es una herramienta que te permite acceder a datos de recursos, gastos (también llamado crédito), y de la programación y ejecución física del presupuesto nacional con los que necesites trabajar (abarca la Administración Central, los Organismos Descentralizados y las Instituciones de Seguridad Social). Los conjuntos de datos incluyen recursos y gastos en sus diferentes etapas; presupuesto, compromiso, devengado y pagado, el detalle de fecha de impacto y los clasificadores presupuestarios, como también la programación y ejecución de las metas físicas y el avance físico y financiero de las obras.
+
+Por medio de la API podés desarrollar programas o automatizar análisis frecuentes, accediendo a la base de datos del portal de Presupuesto Abierto y seleccionando los datos necesarios.
+
+EJEMPLO:
+curl -X POST \
+  https://www.presupuestoabierto.gob.ar/api/v1/credito \
+  -H 'Authorization: TOKEN_RECIBIDO_POR_EMAIL' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "title": "Credito vigente por jurisdiccion",
+    "columns": [
+        "jurisdiccion_id",
+        "jurisdiccion_desc",
+        "credito_vigente"
+    ]
+}'

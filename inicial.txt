@@ -1,1 +1,4 @@
 "Análisis de presupuesto usando Python"
+
+Librerias requeridas: API docs\Librerias #Para revisar e instalar 
+
