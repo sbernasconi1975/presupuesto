@@ -19,6 +19,10 @@ data = {
 # 2. Solicitud y descarga
 print("Consultando API...")
 response = requests.post(url, headers=headers, json=data)
+response.encoding = 'utf-8-sig'
+
+print("Código de estado:", response.status_code)
+print("Contenido recibido:", response.text)
 
 # 3. Procesamiento
 if response.status_code == 200: # Verificamos que la respuesta fue exitosa
